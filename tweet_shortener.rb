@@ -16,20 +16,13 @@ def bulk_tweet_shortener(tweets)
 end
 
 def selective_tweet_shortener(tweets)
-  if tweets.length > 140
-    word_substituter(tweets)
-  else
-    tweets
-  end
+  tweets.length > 140 ? word_substituter(tweets) : tweets
 end
 
 def shortened_tweet_truncator(tweets)
   if tweets.length > 140
     abrv = word_substituter(tweets)
-    if abrv.length > 140
-      abrv[0...140]
-    else
-      abrv
+    abrv.length > 140 ? abrv[0...140] : abrv
     end
   else
     tweets
