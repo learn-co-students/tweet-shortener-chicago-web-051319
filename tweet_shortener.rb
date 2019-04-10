@@ -23,7 +23,6 @@ def shortened_tweet_truncator(tweets)
   if tweets.length > 140
     abrv = word_substituter(tweets)
     abrv.length > 140 ? abrv[0...140] : abrv
-    end
   else
     tweets
   end
