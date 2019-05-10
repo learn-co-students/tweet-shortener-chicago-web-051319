@@ -38,8 +38,18 @@ def bulk_tweet_shortener(arr)
   end
 end
 
-def selective_tweet_shortener
+def selective_tweet_shortener(arr)
+  if arr.length > 140
+    word_substituter(arr)
+  else
+    arr
+  end
 end
 
-def shortened_tweet_truncator
+def shortened_tweet_truncator(tweet)
+  if word_substituter(tweet).length > 140
+    tweet = word_substituter(tweet)[0..136] + "..."
+  else
+    tweet
+  end
 end
